@@ -59,9 +59,10 @@ void test2()
     begin.now();
     for (int i = 0; i < n; ++i)
     {
-        mypool.submit([=]() {
-            RandVec2(&ivec2[i]);
-        });
+        mypool.AddTask([=]() {
+    RandVec2(&ivec2[i]);
+});
+
     }
     mylat.wait();
     end.now();
